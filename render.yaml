@@ -1,7 +1,7 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: render_test
+    databaseName: render_test_95j4
+    user: mrender_test
     plan: free
 
 services:
