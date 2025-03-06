@@ -2,8 +2,8 @@
 <p><%= @chapter.content %></p>
 
 <!-- ปุ่มแก้ไขและลบ -->
-<%= button_to "Edit Chapter", edit_novel_chapter_path(@chapter.novel, @chapter), class: "btn btn-warning" %>
+<%= link_to "Edit Chapter", edit_novel_chapter_path(@chapter.novel, @chapter), class: "btn btn-warning" %>
 <%= button_to "Delete Chapter", novel_chapter_path(@novel, @chapter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 
 <!-- ปุ่มกลับไปหน้าของนิยาย -->
-<%= button_to "Back to Novel", novel_path(@chapter.novel), class: "btn btn-secondary" %>
+<%= link_to "Back to Novel", novel_path(@chapter.novel), class: "btn btn-secondary" %>

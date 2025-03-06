@@ -8,13 +8,13 @@
   <% end %>
 </ul>
 
-<%= button_to "Add Chapter", new_novel_chapter_path(@novel), class: "btn btn-success" %>
+<%= link_to "Add Chapter", new_novel_chapter_path(@novel), class: "btn btn-success" %>
 
 <!-- ปุ่มกลับไปหน้าแรก -->
-<%= button_to "Back to Home", novels_path, class: "btn btn-secondary" %>
+<%= link_to "Back to Home", novels_path, class: "btn btn-secondary" %>
 
 <!-- ปุ่มแก้ไขนิยาย -->
-<%= button_to "Edit Novel", edit_novel_path(@novel), class: "btn btn-warning" %>
+<%= link_to "Edit Novel", edit_novel_path(@novel), class: "btn btn-warning" %>
 
 <!-- ปุ่มลบนิยาย -->
 <%= button_to "Delete Novel", @novel, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
