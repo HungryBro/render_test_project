@@ -1,2 +1,19 @@
-<h1>Chapters#new</h1>
-<p>Find me in app/views/chapters/new.html.erb</p>
+<h1>New Chapter for <%= @novel.title %></h1>
+
+<%= form_with model: [@novel, @chapter], local: true do |f| %>
+  <div>
+    <%= f.label :title, "Chapter Title" %>
+    <%= f.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :content, "Content" %>
+    <%= f.text_area :content, rows: 10, required: true %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Chapter", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to Chapters", novel_chapters_path(@novel), class: "btn btn-secondary" %>

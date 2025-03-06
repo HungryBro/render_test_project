@@ -1,2 +1,19 @@
-<h1>Novels#new</h1>
-<p>Find me in app/views/novels/new.html.erb</p>
+<h1>New Novel</h1>
+
+<%= form_with model: @novel, local: true do |f| %>
+  <div>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description, rows: 5, required: true %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Novel", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Back", novels_path, class: "btn btn-secondary" %>
