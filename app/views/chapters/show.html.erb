@@ -1,8 +1,8 @@
 <h1><%= @chapter.title %></h1>
-<%= simple_format(@chapter.content) %>
+<%= simple_format(@chapter.content.to_s) %>
 
 <div class="chapter-content">
-  <%= @chapter.content %>
+  <%= @chapter.content.to_s.html_safe %>
 </div>
 
 <!-- ปุ่มแก้ไขและลบ -->
