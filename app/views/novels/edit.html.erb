@@ -1,0 +1,19 @@
+<h1>Edit Novel</h1>
+
+<%= form_with model: @novel, local: true do |f| %>
+  <div>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description, rows: 5, required: true %>
+  </div>
+
+  <div>
+    <%= f.submit "Update Novel", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to Novel", novel_path(@novel), class: "btn btn-secondary" %>

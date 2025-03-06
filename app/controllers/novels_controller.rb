@@ -21,6 +21,25 @@ class NovelsController < ApplicationController
     end
   end
 
+  def edit
+    @novel = Novel.find(params[:id])
+  end
+
+  def update
+    @novel = Novel.find(params[:id])
+    if @novel.update(novel_params)
+      redirect_to @novel, notice: "Novel updated successfully!"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @novel = Novel.find(params[:id])
+    @novel.destroy
+    redirect_to novels_path, notice: "Novel deleted successfully!"
+  end
+
   private
 
   def novel_params
