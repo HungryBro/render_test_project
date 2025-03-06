@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "novels/create"
   # Routes for Novels
   resources :novels do
-    resources :chapters, only: [:index, :show, :new, :create]
+    resources :chapters, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
 
   # Health check endpoint
