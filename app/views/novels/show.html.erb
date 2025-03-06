@@ -1,0 +1,10 @@
+<h1><%= @novel.title %></h1>
+<p><%= @novel.description %></p>
+
+<h2>Chapters</h2>
+<ul>
+  <% @chapters.each do |chapter| %>
+    <li><%= link_to chapter.title, novel_chapter_path(@novel, chapter) %></li>
+  <% end %>
+</ul>
+<%= link_to "Add Chapter", new_novel_chapter_path(@novel), class: "btn btn-success" %>

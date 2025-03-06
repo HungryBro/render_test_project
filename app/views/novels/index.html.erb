@@ -1,0 +1,7 @@
+<h1>Novels</h1>
+<%= link_to "New Novel", new_novel_path, class: "btn btn-primary" %>
+<ul>
+  <% @novels.each do |novel| %>
+    <li><%= link_to novel.title, novel_path(novel) %></li>
+  <% end %>
+</ul>

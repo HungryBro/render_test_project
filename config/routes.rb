@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
-  resources :posts
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "chapters/index"
+  get "chapters/show"
+  get "chapters/new"
+  get "chapters/create"
+  get "novels/index"
+  get "novels/show"
+  get "novels/new"
+  get "novels/create"
+  # Routes for Novels
+  resources :novels do
+    resources :chapters, only: [:index, :show, :new, :create]
+  end
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  # Health check endpoint
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
-  # Defines the root path route ("/")
-  root "posts#index"
+  # Root path now points to novels index
+  root "novels#index"
 end
