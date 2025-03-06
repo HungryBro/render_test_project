@@ -1,13 +1,13 @@
 <h1>Chapters for <%= @novel.title %></h1>
 
-<%= link_to "Add New Chapter", new_novel_chapter_path(@novel), class: "btn btn-success" %>
+<%= button_to "Add New Chapter", new_novel_chapter_path(@novel), class: "btn btn-success" %>
 
 <ul>
   <% @chapters.each do |chapter| %>
     <li>
-      <%= link_to chapter.title, novel_chapter_path(@novel, chapter) %>
+      <%= button_to chapter.title, novel_chapter_path(@novel, chapter) %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to "Back to Novel", novel_path(@novel), class: "btn btn-secondary" %>
+<%= button_to "Back to Novel", novel_path(@novel), class: "btn btn-secondary" %>
