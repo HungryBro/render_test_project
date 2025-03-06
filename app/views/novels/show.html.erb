@@ -17,5 +17,5 @@
 <%= link_to "Edit Novel", edit_novel_path(@novel), class: "btn btn-warning" %>
 
 <!-- ปุ่มลบนิยาย -->
-<%= button_to "Delete Novel", @novel, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+<%= link_to "Delete Novel", @novel, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 
