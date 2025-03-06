@@ -3,7 +3,7 @@
 
 <!-- ปุ่มแก้ไขและลบ -->
 <%= link_to "Edit Chapter", edit_novel_chapter_path(@chapter.novel, @chapter), class: "btn btn-warning" %>
-<%= link_to "Delete Chapter", novel_chapter_path(@chapter.novel, @chapter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+<%= button_to "Delete Chapter", novel_chapter_path(@novel, @chapter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 
 <!-- ปุ่มกลับไปหน้าของนิยาย -->
 <%= link_to "Back to Novel", novel_path(@chapter.novel), class: "btn btn-secondary" %>
