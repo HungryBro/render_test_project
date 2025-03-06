@@ -1,5 +1,9 @@
 <h1><%= @chapter.title %></h1>
-<p><%= @chapter.content %></p>
+<%= simple_format(@chapter.content) %>
+
+<div class="chapter-content">
+  <%= @chapter.content %>
+</div>
 
 <!-- ปุ่มแก้ไขและลบ -->
 <%= link_to "Edit Chapter", edit_novel_chapter_path(@chapter.novel, @chapter), class: "btn btn-warning" %>
