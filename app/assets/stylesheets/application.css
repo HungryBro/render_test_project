@@ -15,8 +15,36 @@
  */
 
  .chapter-content {
-    white-space: pre-wrap;
-    font-size: 18px;  /* ปรับขนาดตัวอักษรให้ใหญ่ขึ้น */
-    line-height: 1.8; /* ปรับระยะห่างระหว่างบรรทัด */
-  }
+    white-space: pre-wrap; /* ให้รองรับการเว้นบรรทัดปกติ */
+    font-size: 18px; /* ขนาดตัวอักษร */
+    line-height: 2.0; /* ระยะห่างระหว่างบรรทัด */
+    margin-bottom: 1.5rem; /* ป้องกันการเว้นระยะว่างเกินไป */
+    overflow: hidden; /* ซ่อน overflow ที่อาจทำให้เกิดช่องว่าง */
+    max-height: none; /* ปิดการจำกัดความสูง */
+    page-break-before: avoid;
+    page-break-after: avoid;
+    break-inside: avoid;
+}
+
+.trix-content {
+    margin: 0 !important;  /* ลดช่องว่างที่อาจเกิดขึ้นจาก Trix */
+    padding: 0 !important;
+    line-height: 1.8;
+    white-space: normal;
+}
+
+/* ปรับระยะห่างของแต่ละย่อหน้า */
+.chapter-content p {
+    margin-bottom: 0.5em;
+}
+
+/* ป้องกันข้อความติดขอบจอในหน้าจอเล็ก */
+@media screen and (max-width: 768px) {
+    .chapter-content {
+        font-size: 16px; /* ลดขนาดตัวอักษรสำหรับมือถือ */
+        line-height: 2;
+    }
+}
+
+  
   

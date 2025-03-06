@@ -1,13 +1,14 @@
 <h1><%= @chapter.title %></h1>
-<%= simple_format(@chapter.content.to_s) %>
+
 
 <div class="chapter-content">
-  <%= @chapter.content.to_s.html_safe %>
+  <%= @chapter.content.body.to_s.strip.html_safe %>
 </div>
 
 <!-- ปุ่มแก้ไขและลบ -->
 <%= link_to "Edit Chapter", edit_novel_chapter_path(@chapter.novel, @chapter), class: "btn btn-warning" %>
+<!-- <%= button_to "Delete Chapter", novel_chapter_path(@novel, @chapter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %> -->
 <%= button_to "Delete Chapter", novel_chapter_path(@novel, @chapter), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 
 <!-- ปุ่มกลับไปหน้าของนิยาย -->
-<!-- <%= link_to "Back to Novel", novel_path(@chapter.novel), class: "btn btn-secondary" %> -->
+<%= link_to "Back to Novel", novel_path(@chapter.novel), class: "btn btn-secondary" %>
